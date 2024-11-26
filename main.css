@@ -1,0 +1,51 @@
+body {
+  background-color: #000;
+  color: #0f0;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #0ff;
+  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;
+}
+
+a {
+  color: #f0f;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+  color: #ff0;
+  text-shadow: 0 0 5px #ff0, 0 0 10px #ff0, 0 0 20px #ff0, 0 0 40px #ff0;
+}
+
+button {
+  background-color: #0f0;
+  border: none;
+  color: #000;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #ff0;
+  color: #000;
+  text-shadow: 0 0 5px #ff0, 0 0 10px #ff0, 0 0 20px #ff0, 0 0 40px #ff0;
+}
+
+input, textarea {
+  background-color: #000;
+  border: 1px solid #0f0;
+  color: #0f0;
+  padding: 10px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+input:focus, textarea:focus {
+  border-color: #ff0;
+  outline: none;
+  box-shadow: 0 0 5px #ff0, 0 0 10px #ff0, 0 0 20px #ff0, 0 0 40px #ff0;
+}

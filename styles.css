@@ -1,0 +1,146 @@
+/* General Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000000; /* Dark background */
+    color: #ffffff; /* White text */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    text-align: center;
+}
+ul, ol {
+    list-style: none; 
+    padding: 0;       
+    margin: 0;        
+}
+/* Header Navigation Bar */
+header nav {
+    background: linear-gradient(90deg, rgb(0, 0, 0), rgba(176, 43, 216, 0.836)); /* Neon gradient */
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 0 10px #00ffff, 0 0 30px #00ffff;
+}
+
+header nav a {
+    color: #ffffff; /* White links */
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+header nav a:hover {
+    color: #0ff; /* Neon cyan on hover */
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+}
+
+/* Main Content Styling */
+main {
+    margin: 2rem auto;
+    padding: 1rem;
+    max-width: 900px;
+    box-shadow: 0 0 15px #ff00ff, 0 0 30px #ff00ff; /* Glowing border */
+    background: rgba(255, 255, 255, 0.1); /* Transparent white */
+    border-radius: 10px;
+    list-style: none;
+}
+
+/* Headings */
+h1, h2 {
+    color: rgb(221, 255, 255);
+    text-shadow: 0 0 10px #46f1f1, 0 0 30px #088080; /* Neon glow effect */
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Links */
+a {
+    color: #ff00ff;
+    text-decoration: none;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+a:hover {
+    color: #ff1493; /* Neon pink on hover */
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+}
+
+/* Footer */
+footer {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: #0f0f0f;
+    color: #ffffff;
+    box-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+}
+
+footer a {
+    color: #0ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff;
+}
+
+/* Buttons */
+button {
+    background: linear-gradient(90deg, #ff00ff, #00ffff);
+    border: none;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    box-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #00ffff, #ff00ff);
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #ff00ff, 0 0 30px #00ffff;
+}
+
+/* Glow Effect for Sections */
+section {
+    margin: 2rem auto;
+    padding: 1rem;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.8); /* Transparent black background */
+    box-shadow: 0 0 15px #00ff00, 0 0 30px #00ff00; /* Green glow */
+}
+
+/* Table Styling (Optional) */
+table {
+    width: 100%;
+    margin: 1rem 0;
+    border-collapse: collapse;
+    background-color: #0f0f0f;
+    box-shadow: 0 0 15px #0ff, 0 0 30px #00ffff;
+}
+
+table th, table td {
+    padding: 10px;
+    color: #ffffff;
+    border: 1px solid #00ffff;
+}
+
+table th {
+    background: linear-gradient(90deg, #0ff, #00f); /* Neon gradient */
+}
+
+table tr:hover {
+    background: rgba(255, 255, 255, 0.1);
+}

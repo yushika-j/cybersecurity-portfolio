@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HackThisSite Penetration Testing Challenges</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>HackThisSite.org Penetration Testing Challenges</h1>
+    <hr>
+    <p><a href="Projects.md">Back to Projects</a></p>
+    <hr>
+    <h2>Project Overview</h2>
+    <p>This project showcases penetration testing exercises completed on <strong>HackThisSite</strong> as part of the <em>Commonwealth Bank Intro to Cybersecurity Program</em>. The primary goal was to identify, exploit, and document vulnerabilities across multiple web application levels, gaining hands-on experience in ethical hacking.</p>
+    <p>The project explores vulnerabilities like weak input validation, insecure encryption, and flawed authentication mechanisms, using techniques such as JavaScript tampering, SSI injection, and directory traversal. Each level provided insight into common web security issues and highlights the importance of secure application development practices.</p>
+    <hr>
+    <h2>Objectives</h2>
+    <ol>
+        <li>Identify web application vulnerabilities, including weak input validation and improper authentication mechanisms.</li>
+        <li>Learn and apply penetration testing techniques, such as command injection and directory traversal.</li>
+        <li>Understand and exploit encryption vulnerabilities to assess the strength of cryptographic methods.</li>
+        <li>Enhance knowledge of securing server-side logic, including SSI injection and Apache configuration files.</li>
+        <li>Document all vulnerabilities, exploits, and provide security recommendations to improve the application’s security posture.</li>
+    </ol>
+    <hr>
+    <h2>Tools & Technologies</h2>
+    <ul>
+        <li><strong>Languages</strong>: HTML, JavaScript, PHP</li>
+        <li><strong>Frameworks</strong>: OWASP Top 10 (focus on A1: Injection, A3: Sensitive Data Exposure, A5: Broken Access Control)</li>
+        <li><strong>Techniques</strong>: HTML source code inspection, JavaScript manipulation, cookie tampering, SSI (Server Side Includes) injection, directory traversal, URL manipulation, command injection, form tampering, cryptographic reverse-engineering, and session hijacking</li>
+        <li><strong>Cryptographic Analysis</strong>: Pattern recognition for weak encryption algorithms</li>
+        <li><strong>Web Server Analysis</strong>: Apache configurations, <code>.htaccess</code> file security</li>
+    </ul>
+    <hr>
+    <h2>Challenges Completed</h2>
+    <h3>Level 1</h3>
+    <p><strong>Vulnerability</strong>: Password stored in the HTML source code.</p>
+    <p><strong>Exploit</strong>: By inspecting the page's HTML source code using Web Developer Tools, I found the password in a hidden input field. This exposed the password without any need for bypassing authentication.</p>
+    <p><strong>Recommendation</strong>: Avoid storing sensitive data, such as passwords, client-side in HTML or JavaScript, and use server-side authentication mechanisms.</p>
+    <h3>Level 2</h3>
+    <p><strong>Vulnerability</strong>: Missing password file allowed blank input to be accepted.</p>
+    <p><strong>Exploit</strong>: The password validation script relied on an external file that was missing. By submitting the form without entering any password, the server accepted the blank input and granted access. This demonstrated the lack of input validation and error handling. This exposed a major flaw in error handling, as the absence of critical files should prompt an error, not bypass the authentication process entirely.</p>
+    <p><strong>Recommendation</strong>: Implement proper error handling and file validation to ensure necessary files are available, and reject empty or invalid input.</p>
+    <h3>Level 3</h3>
+    <p><strong>Vulnerability</strong>: Password stored in an accessible file (<code>password.php</code>).</p>
+    <p><strong>Exploit</strong>: I manually navigated to the <code>password.php</code> file by appending the file name to the URL. The file contained the password in plaintext, bypassing any form-based security measures.</p>
+    <p><strong>Recommendation</strong>: Restrict access to sensitive files using proper directory permissions and store sensitive data on the server-side.</p>
+    <h3>Level 4</h3>
+    <p><strong>Vulnerability</strong>: Password recovery system allowed email address modification.</p>
+    <p><strong>Exploit</strong>: By using the browser's developer tools, I modified the email field in the password recovery form. I replaced the hardcoded email address with my own, intercepting the password reset information intended for another user.</p>
+    <p><strong>Recommendation</strong>: Ensure that all input fields, especially those handling sensitive data like email addresses, are validated server-side. Use secure methods for handling password recovery processes.</p>
+    <h3>Level 5</h3>
+    <p><strong>Vulnerability</strong>: Similar to Level 4, the password recovery system allowed modification of the email address.</p>
+    <p><strong>Exploit</strong>: Just like how I did it in Level 4, for this level, I simply altered the email field and intercepted the password reminder by modifying the hardcoded email in the HTML. The repeated vulnerability shows how an attacker could consistently exploit the system to gain unauthorized access to user accounts.</p>
+    <p><strong>Recommendation</strong>: Implement server-side validation and secure input fields to prevent tampering. Use secure methods for handling password recovery processes.</p>
+    <h3>Level 6</h3>
+    <p><strong>Vulnerability</strong>: Weak encryption algorithm allowed reverse-engineering.</p>
+    <p><strong>Exploit</strong>: The encryption used a predictable character-shifting pattern. By analyzing the input-output pairs of encrypted data, I reverse-engineered the algorithm and decrypted the password. This level demonstrated how weak, non-standard encryption techniques can be easily compromised by pattern recognition.</p>
+    <p><strong>Recommendation</strong>: Use modern cryptographic standards like AES or RSA, instead of weak custom encryption schemes.</p>
+    <h3>Level 7</h3>
+    <p><strong>Vulnerability</strong>: Command injection allowed directory listing.</p>
+    <p><strong>Exploit</strong>: The calendar input field on the page was vulnerable to command injection. By appending commands to the input (e.g., 2024; ls -l), I was able to execute shell commands on the server. This provided a list of the directory contents, revealing the password file. This type of vulnerability is particularly dangerous as it allows an attacker to run arbitrary commands on the server, potentially compromising the entire system.</p>
+    <p><strong>Recommendation</strong>: Implement strict input sanitization, especially for input fields that interact with system commands, to prevent injection attacks. Limit user privileges on the server to reduce the impact of such attacks.</p>
+    <h3>Level 8</h3>
+    <p><strong>Vulnerability</strong>: SSI (Server Side Includes) injection allowed directory traversal and file access.</p>
+    <p><strong>Exploit</strong>: By injecting an SSI command into the input field, I could traverse the file system and access files outside the intended directories. This type of attack exploits the server’s ability to process SSI commands embedded in user input, which can lead to unauthorized access to sensitive files and directories. By injecting the right commands, I navigated through the file system to locate and retrieve the password file.</p>
+    <p><strong>Recommendation</strong>: Disable SSI in web applications and ensure input fields are properly sanitized.</p>
+    <h3>Level 9</h3>
+    <p><strong>Vulnerability</strong>: Directory traversal via SSI allowed access to restricted files.</p>
+    <p><strong>Exploit</strong>: By manipulating the input field and specifying file paths, I was able to bypass the application’s directory restrictions and retrieve sensitive information stored in protected files. This demonstrated the danger of allowing unchecked input to interact with the server's file system.</p>
+    <p><strong>Recommendation</strong>: Implement strong input validation, restrict access to sensitive directories using proper permissions, and disable SSI processing to prevent exploitation.</p>
+    <h3>Level 10</h3>
+    <p><strong>Vulnerability</strong>: Cookie manipulation allowed unauthorized access.</p>
+    <p><strong>Exploit</strong>: By modifying the value of an authorization cookie from "no" to "yes" using JavaScript, I was able to bypass authentication and gain access to restricted areas of the application. This type of vulnerability highlights the risks of relying on client-side cookies for critical security decisions without validating them on the server side.</p>
+    <p><strong>Recommendation</strong>: Use server-side validation for all authentication and authorization processes, and ensure that cookies used for security purposes are encrypted and cannot be easily manipulated.</p>
+    <h3>Level 11</h3>
+    <p><strong>Vulnerability</strong>: Hidden directory and file accessible through Apache's <code>.htaccess</code> configurations.</p>
+    <p><strong>Exploit</strong>: This level involved navigating through directories based on clues provided in song lyrics and file names. By systematically altering the URL, I eventually located the .htaccess file, which contained instructions revealing a hidden file named "DaAnswer." Accessing this file provided the password. This demonstrated the importance of properly securing .htaccess files and ensuring that sensitive files and directories are not exposed through misconfigurations.</p>
+    <p><strong>Recommendation</strong>: Secure .htaccess files and ensure that hidden directories and files are properly protected by configuring directory permissions and access controls.</p>
+    <hr>
+    <h2>Methodology</h2>
+    <ul>
+        <li><strong>Reconnaissance</strong>: Used tools such as Web Developer Tools and Burp Suite to identify potential vulnerabilities in HTML, JavaScript, and server configurations.</li>
+        <li><strong>Exploitation</strong>: Exploited vulnerabilities using techniques such as cookie tampering, directory traversal, and SSI injection to gain unauthorized access to sensitive files and data.</li>
+        <li><strong>Documentation</strong>: Each vulnerability was documented with a description of the exploit and detailed security recommendations to mitigate the issues.</li>
+    </ul>
+    <hr>
+
+### **Level 11**
+- **Vulnerability**: Hidden directory and file accessible through Apache's `.htaccess` configurations.
+- **Exploit**: This level involved navigating through directories based on clues provided in song lyrics and file names. By systematically altering the URL, I eventually located the .htaccess file, which contained instructions revealing a hidden file named "DaAnswer." Accessing this file provided the password. This demonstrated the importance of properly securing .htaccess files and ensuring that sensitive files and directories are not exposed through misconfigurations.
+- **Recommendation**: Secure .htaccess files and ensure that hidden directories and files are properly protected by configuring directory permissions and access controls.
+
+---
+
+## Methodology
+
+- **Reconnaissance**: Used tools such as Web Developer Tools and Burp Suite to identify potential vulnerabilities in HTML, JavaScript, and server configurations.
+- **Exploitation**: Exploited vulnerabilities using techniques such as cookie tampering, directory traversal, and SSI injection to gain unauthorized access to sensitive files and data.
+- **Documentation**: Each vulnerability was documented with a description of the exploit and detailed security recommendations to mitigate the issues.
+
+---
+
+## Findings
+
+- **Input Validation**: Inadequate validation of user input exposed the application to various attacks, including command injection and email modification.
+- **Encryption**: Weak encryption schemes were reverse-engineered, highlighting the risks of predictable encryption algorithms.
+- **Authentication**: Client-side authentication mechanisms, such as cookie manipulation, were easily bypassed without server-side validation.
+- **Directory Traversal**: Improper directory permissions allowed unauthorized access to sensitive files through directory traversal and SSI injection.
+
+---
+
+## Conclusion
+
+The HackThisSite penetration testing exercise highlighted a variety of critical vulnerabilities, including weak input validation, flawed authentication, and poor encryption practices. By exploiting these vulnerabilities using techniques such as command injection, directory traversal, and cookie manipulation, I gained unauthorized access to restricted areas of the application. This exercise underscored the importance of strong input validation, server-side checks, and modern encryption methods to mitigate risks and protect sensitive data. Addressing these issues through secure development practices is crucial for enhancing the security posture of any web application.
+
+This project provided invaluable hands-on experience with various penetration testing techniques, reinforcing my understanding of how web vulnerabilities are exploited in real-world scenarios. By learning to identify and address these vulnerabilities, I am better equipped to ensure that future applications are built with robust security controls, thereby reducing the risk of exploitation and strengthening overall application integrity.
+
+---
+
+[Back to Projects](Projects.md)
+
+
