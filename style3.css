@@ -1,0 +1,180 @@
+/* General Body Styling */
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #f8f8f8; /* Soft light gray background */
+    color: #333333; /* Dark gray text */
+    margin: 0;
+    padding: 0;
+    line-height: 1.8;
+    text-align: center;
+}
+
+/* Remove default list styling */
+ul, ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Header Navigation Bar */
+header nav {
+    background-color: #ffffff; /* White background */
+    border-bottom: 1px solid #cccccc; /* Subtle border */
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header nav a {
+    color: #333333; /* Dark gray text */
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.2rem;
+    font-weight: 500; /* Semi-bold */
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+header nav a:hover {
+    color: #000000; /* Black text on hover */
+    border-bottom: 2px solid #000000; /* Underline effect */
+}
+
+/* Main Content Styling */
+main {
+    margin: 3rem auto;
+    padding: 2rem;
+    max-width: 800px;
+    background-color: #ffffff; /* White background */
+    border: 1px solid #cccccc; /* Subtle gray border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow */
+    text-align: left;
+}
+
+/* Headings */
+h1, h2 {
+    color: #000000; /* Solid black */
+    font-weight: bold;
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-top: 1.5rem;
+}
+
+/* Links */
+a {
+    color: #0073e6; /* Professional blue */
+    text-decoration: none;
+    border-bottom: 1px solid transparent; /* Subtle hover effect */
+    transition: border-bottom 0.3s ease, color 0.3s ease;
+}
+
+a:hover {
+    color: #005bb5; /* Darker blue */
+    border-bottom: 1px solid #005bb5;
+}
+
+/* Footer */
+footer {
+    margin-top: 3rem;
+    padding: 1.5rem 0;
+    background-color: #ffffff;
+    color: #666666; /* Subtle gray */
+    border-top: 1px solid #cccccc;
+    text-align: center;
+}
+
+footer a {
+    color: #0073e6; /* Professional blue */
+    text-decoration: none;
+    font-weight: 500;
+}
+
+footer a:hover {
+    color: #005bb5;
+}
+
+/* Buttons */
+button {
+    background-color: #333333; /* Dark gray */
+    color: #ffffff; /* White text */
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #000000; /* Solid black */
+    transform: scale(1.05);
+}
+
+/* Sections */
+section {
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: #ffffff; /* White background */
+    border: 1px solid #dddddd; /* Subtle border */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08); /* Light shadow */
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    background-color: #ffffff; /* White background */
+    border: 1px solid #dddddd;
+    font-size: 0.95rem;
+}
+
+table th, table td {
+    padding: 12px;
+    border: 1px solid #cccccc; /* Subtle cell borders */
+    text-align: left;
+}
+
+table th {
+    background-color: #f2f2f2; /* Light gray header background */
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9; /* Alternating row colors */
+}
+
+table tr:hover {
+    background-color: #eeeeee; /* Light gray hover */
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #cccccc; /* Subtle border */
+    border-radius: 5px;
+}
+
+/* List Styling */
+ul li, ol li {
+    padding: 0.5rem 0;
+}
+
+/* Blockquote Styling */
+blockquote {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background-color: #f5f5f5;
+    border-left: 4px solid #cccccc;
+    font-style: italic;
+    color: #666666;
+}
