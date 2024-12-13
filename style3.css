@@ -16,7 +16,7 @@ html {
 }
 /* Banner Section */
 #banner {
-    background-image: url('/marbre.jpg');
+    background-image: "marbre.jpg";
 /*     background-image: url('/gears.jpg'); */
 /*     background-image: url('/bg-black.jpg'); */
     color: #ffffff; /* White text */
