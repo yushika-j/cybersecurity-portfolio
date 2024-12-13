@@ -44,6 +44,7 @@ html {
     margin-top: 1rem;
     color: #d9d9d9; /* Softer gray for contrast */
     font-style: italic; /* Stylish emphasis for the tagline */
+    text-shadow: 2px 2px #000000
     text-shadow: 0 2px 5px rgba(255, 255, 255, 0.3); /* Subtle glow for tagline */
 }
 
