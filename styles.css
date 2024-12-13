@@ -11,7 +11,7 @@ body {
 main img {
     max-width: 100%; /* Ensures the image scales responsively */
     height: auto;    /* Maintains the aspect ratio */
-    width: 150px;    /* Sets the image width to 150px */
+    width: 450px;    /* Sets the image width to 150px */
     border-radius: 10px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Adds a shadow */
 }
