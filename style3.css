@@ -172,6 +172,21 @@ button:hover {
         font-size: 1rem;
     }
 }
+/* General Styling for Links inside <p> */
+p a {
+    color: #ffffff; /* White text for contrast */
+    text-decoration: none; /* Removes underline */
+    font-weight: bold; /* Makes the links bold */
+    font-size: 1.2rem; /* Adjusts font size for emphasis */
+    border-bottom: 2px solid transparent; /* Subtle hover effect */
+    transition: color 0.3s ease, border-bottom 0.3s ease; /* Smooth transitions */
+}
+
+/* Hover Effect */
+p a:hover {
+    color: #b3b3b3; /* Changes text to light gray on hover */
+    border-bottom: 2px solid #ffffff; /* Adds a white underline effect */
+}
 
 .round-image {
     width: 200px; /* Adjust width as needed */
