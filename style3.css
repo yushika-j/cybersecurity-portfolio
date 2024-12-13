@@ -172,3 +172,15 @@ button:hover {
         font-size: 1rem;
     }
 }
+
+.round-image {
+    width: 200px; /* Adjust width as needed */
+    height: 200px; /* Ensure a square container for a perfect circle */
+    border-radius: 50%; /* Makes the image round */
+    background-color: #000000; /* Black background for corners */
+    display: block; /* Centers the image */
+    margin: 0 auto; /* Centers the image horizontally */
+    object-fit: cover; /* Ensures the image fits within the circle */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Optional shadow for emphasis */
+}
+
