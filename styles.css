@@ -8,7 +8,7 @@ body {
     line-height: 1.6;
     text-align: center;
 }
-img {
+main section img {
     max-width: 100%; /* Ensures the image scales responsively */
     height: auto;    /* Maintains the aspect ratio */
     width: 150px;    /* Sets the image width to 150px */
