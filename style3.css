@@ -202,3 +202,85 @@ p a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Optional shadow for emphasis */
 }
 
+#certifications {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+/* Title Animation */
+.animate-title {
+    font-size: 2rem;
+    text-align: center;
+    animation: glow 1.5s infinite alternate;
+}
+
+/* Subtle glow effect */
+@keyframes glow {
+    0% { text-shadow: 0 0 5px #ff8c00; }
+    100% { text-shadow: 0 0 15px #ff4500; }
+}
+
+/* Slide-in text */
+.animate-text {
+    text-align: center;
+    animation: slideIn 1.2s ease-out;
+}
+
+/* List animation */
+.certifications-list {
+    list-style: none;
+    padding: 0;
+}
+
+.cert-item {
+    font-size: 1.2rem;
+    padding: 10px;
+    margin: 5px 0;
+    background: #222;
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Highlighted certifications with a pulse effect */
+.highlight {
+    animation: pulse 1.5s infinite;
+}
+
+/* Hover Effect */
+.cert-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 165, 0, 0.8);
+}
+
+/* Keyframes for animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
