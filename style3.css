@@ -192,8 +192,8 @@ p a:hover {
 }
 
 .round-image {
-    width: 200px; /* Adjust width as needed */
-    height: 200px; /* Ensure a square container for a perfect circle */
+    width: 300px; /* Adjust width as needed */
+    height: 300px; /* Ensure a square container for a perfect circle */
     border-radius: 50%; /* Makes the image round */
     background-color: #000000; /* Black background for corners */
     display: block; /* Centers the image */
